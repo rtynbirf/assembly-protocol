@@ -1,0 +1,33 @@
+name: летопись-страж
+on:
+  workflow_call: {}
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  strazh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 60
+
+      - name: "ЛЕТОПИСЬ-СТРАЖ (SSOT: rtynbirf/assembly-protocol)"
+        uses: actions/checkout@v4
+        with:
+          repository: rtynbirf/assembly-protocol
+          ref: main
+          path: страж
+          persist-credentials: false
+
+      - name: Компендиум стража (реальные улики дома, пломбы sha256)
+        run: python3 "страж/страж_компендиум.py"
+
+      - name: Самопроверка автомата (векторы + незаконные переходы)
+        run: python3 "страж/летопись_fsm.py" --само
+
+      - name: Конечный автомат летописи этого репо (дом = реестру)
+        run: python3 "страж/летопись_fsm.py" "$GITHUB_WORKSPACE" --коммиты 40
