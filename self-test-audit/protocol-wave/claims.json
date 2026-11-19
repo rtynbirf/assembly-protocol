@@ -1,0 +1,159 @@
+[
+ {
+  "claim_id": "AP-FLEET-001",
+  "statement": "Workflow протокола подключён к 46 живым репо аккаунта rtynbirf.",
+  "kind": "observation",
+  "scope": "флот аккаунта rtynbirf",
+  "scope_id": "fleet.rtynbirf",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Число тел с workflow-файлом по живому срезу API",
+    "method": "measurement",
+    "result": "summary.csv строка 3, колонка value = 46",
+    "protocol": "Значение выведено скриптом из живого API-среза и логов; сверка ячейки CSV",
+    "instrument": "GitHub REST API + protocol_fsm.py + compendium_run.py",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 46,
+    "tolerance": 0.0,
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "b08f4d9af3c8a42ba30d73b84424a8a04e7a530cc5f91f639f068d2e0a6aa8b8",
+    "csv_row": 3,
+    "csv_column": "value"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-I2-001",
+  "statement": "Последний прогон протокола зелёный в 45 подключённых телах.",
+  "kind": "observation",
+  "scope": "флот аккаунта rtynbirf",
+  "scope_id": "fleet.rtynbirf.green",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Число success-вердиктов последнего прогона по срезу API",
+    "method": "measurement",
+    "result": "summary.csv строка 4, колонка value = 45",
+    "protocol": "Значение выведено скриптом из живого API-среза и логов; сверка ячейки CSV",
+    "instrument": "GitHub REST API + protocol_fsm.py + compendium_run.py",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 45,
+    "tolerance": 0.0,
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "b08f4d9af3c8a42ba30d73b84424a8a04e7a530cc5f91f639f068d2e0a6aa8b8",
+    "csv_row": 4,
+    "csv_column": "value"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-FSM-001",
+  "statement": "Self-тест автомата: 15 из 15 векторов и контуров; 6 из 6 незаконных переходов пойманы.",
+  "kind": "observation",
+  "scope": "protocol_fsm.py",
+  "scope_id": "protocol-fsm.selftest",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Строка сводки self-теста автомата",
+    "method": "measurement",
+    "result": "summary.csv строка 5, колонка value = 15",
+    "protocol": "Значение выведено скриптом из живого API-среза и логов; сверка ячейки CSV",
+    "instrument": "GitHub REST API + protocol_fsm.py + compendium_run.py",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 15,
+    "tolerance": 0.0,
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "b08f4d9af3c8a42ba30d73b84424a8a04e7a530cc5f91f639f068d2e0a6aa8b8",
+    "csv_row": 5,
+    "csv_column": "value"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-RUN-001",
+  "statement": "Прогон v7: 12 случаев, две формулы; v6 «верифицировано» у 11 из 12, v7 различает 6 вердиктных классов.",
+  "kind": "observation",
+  "scope": "compendium_run.py",
+  "scope_id": "compendium-run.v7",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Число случаев прогона",
+    "method": "measurement",
+    "result": "summary.csv строка 9, колонка value = 12",
+    "protocol": "Значение выведено скриптом из живого API-среза и логов; сверка ячейки CSV",
+    "instrument": "GitHub REST API + protocol_fsm.py + compendium_run.py",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 12,
+    "tolerance": 0.0,
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "b08f4d9af3c8a42ba30d73b84424a8a04e7a530cc5f91f639f068d2e0a6aa8b8",
+    "csv_row": 9,
+    "csv_column": "value"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-FSM-002",
+  "statement": "Сводка self-теста автомата дословно: АВТОМАТ ПРОТОКОЛА: векторы+контуры 15/15; незаконные переходы пойманы 6/6;",
+  "kind": "observation",
+  "scope": "protocol_fsm.py, evidence/fsm.log",
+  "scope_id": "protocol-fsm.log",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Дословная строка из лога self-теста автомата",
+    "method": "log_analysis",
+    "result": "строка найдена verbatim в fsm.log",
+    "protocol": "Разбор дословного вывода self-теста protocol_fsm.py на предмет строки сводки",
+    "raw_data_ref": "evidence/fsm.log",
+    "raw_data_sha256": "6f613519696005afac7d660808fd86471c91562a99044b5274288836cd03f009",
+    "excerpt": "АВТОМАТ ПРОТОКОЛА: векторы+контуры 15/15; незаконные переходы пойманы 6/6;"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-RUN-002",
+  "statement": "Счёт формул дословно из лога прогона: v7 — ВЕРИФИЦИРОВАНО: 6, ПУСТО: 2, UNKNOWN: 1, НЕСВЕРЯЕМО: 1, ПРОТОКОЛ ЛОВИТ: 1, СОГЛАСОВАНО-НЕВЕРНО -> ЗАПЛАТ-6: 1",
+  "kind": "observation",
+  "scope": "compendium_run.py, evidence/compendium_run.log",
+  "scope_id": "compendium-run.log",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Дословная строка счёта v7 из лога прогона",
+    "method": "log_analysis",
+    "result": "строка найдена verbatim в compendium_run.log",
+    "protocol": "Разбор дословного вывода прогона compendium_run.py на предмет строки счёта",
+    "raw_data_ref": "evidence/compendium_run.log",
+    "raw_data_sha256": "637a5d6343a92180ea19c3d98d977762a9be6c1efc8558826ab6350d9aa3d38f",
+    "excerpt": "v7 — ВЕРИФИЦИРОВАНО: 6, ПУСТО: 2, UNKNOWN: 1, НЕСВЕРЯЕМО: 1, ПРОТОКОЛ ЛОВИТ: 1, СОГЛАСОВАНО-НЕВЕРНО -> ЗАПЛАТ-6: 1"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-RUN-003",
+  "statement": "Счёт старой формулы дословно из лога прогона: СЧЁТ: v6 — «верифицировано» у 11 из 12 (в том числе у пустых и несверяемых);",
+  "kind": "observation",
+  "scope": "compendium_run.py, evidence/compendium_run.log",
+  "scope_id": "compendium-run.log",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Дословная строка счёта v6 из лога прогона",
+    "method": "log_analysis",
+    "result": "строка найдена verbatim в compendium_run.log",
+    "protocol": "Разбор дословного вывода прогона compendium_run.py на предмет строки счёта",
+    "raw_data_ref": "evidence/compendium_run.log",
+    "raw_data_sha256": "637a5d6343a92180ea19c3d98d977762a9be6c1efc8558826ab6350d9aa3d38f",
+    "excerpt": "СЧЁТ: v6 — «верифицировано» у 11 из 12 (в том числе у пустых и несверяемых);"
+   }
+  ]
+ }
+]

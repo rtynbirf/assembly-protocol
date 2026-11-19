@@ -1,0 +1,203 @@
+{
+ "schema_version": "1.0",
+ "project": "assembly-protocol: механизм верификации через исполнение",
+ "status": "PASS",
+ "analogy_notice": "Аналогия LFS: стадии сборки с зависимостями; здесь — протокол, автомат, флот.",
+ "lifecycle": {
+  "exit_criteria": [
+   "все узлы PASS",
+   "lex-naturae valid=true на claims.json",
+   "последний прогон зелёный во всех подключённых телах вне реестра законных состояний"
+  ]
+ },
+ "nodes": [
+  {
+   "id": "protocol-v7-patches",
+   "role": "STAGE",
+   "name": "Протокол v7: патчи 1-4, 12 случаев, две формулы (v6 против v7)",
+   "source": [
+    {
+     "type": "artifact",
+     "uri": "evidence/compendium_run.log",
+     "claim": "дословный вывод прогона compendium_run.py"
+    }
+   ],
+   "version": "v7-2026-11-19",
+   "verified_by": [
+    "run",
+    "lex_naturae"
+   ],
+   "scaffold": true,
+   "replaceable_by": [
+    "перепрогон с другим набором случаев"
+   ],
+   "falsification_or_revision_condition": "Повторный прогон даёт иной счёт формул v6/v7 или случай классифицирован иначе.",
+   "depends_on": {
+    "build": [],
+    "runtime": []
+   },
+   "status": "PASS",
+   "evidence": [
+    {
+     "check": "Полный прогон compendium_run.py на 12 случаях",
+     "result": "v6: верифицировано 11/12; v7: 6 ВЕРИФИЦИРОВАНО, 2 ПУСТО, 1 UNKNOWN, 1 НЕСВЕРЯЕМО, 1 ПРОТОКОЛ ЛОВИТ, 1 СОГЛАСОВАНО-НЕВЕРНО; exit 0",
+     "date": "2026-11-19",
+     "source_ref": "evidence/compendium_run.log"
+    }
+   ]
+  },
+  {
+   "id": "protocol-fsm",
+   "role": "STAGE",
+   "name": "Конечный автомат: таблица переходов, запрет незаконных, контур ЗАПЛАТ-6",
+   "source": [
+    {
+     "type": "artifact",
+     "uri": "evidence/fsm.log",
+     "claim": "дословный вывод self-теста protocol_fsm.py"
+    }
+   ],
+   "version": "fsm-2026-11-19",
+   "verified_by": [
+    "run",
+    "lex_naturae"
+   ],
+   "scaffold": true,
+   "replaceable_by": [
+    "расширение таблицы переходов с новым self-тестом"
+   ],
+   "falsification_or_revision_condition": "Self-тест ловит меньше 6 незаконных переходов или вектор классифицирован не как v7.",
+   "depends_on": {
+    "build": [
+     "protocol-v7-patches"
+    ],
+    "runtime": []
+   },
+   "status": "PASS",
+   "evidence": [
+    {
+     "check": "Self-тест автомата: 13 векторов + 2 контура + 6 запрещённых",
+     "result": "15/15 векторов и контуров; 6/6 незаконных пойманы; все 6 вердиктов достижимы; exit 0",
+     "date": "2026-11-19",
+     "source_ref": "evidence/fsm.log"
+    }
+   ]
+  },
+  {
+   "id": "fleet-attach",
+   "role": "STAGE",
+   "name": "Подключение workflow_call ко всем живым репо аккаунта",
+   "source": [
+    {
+     "type": "artifact",
+     "uri": "evidence/protocol_runs.csv",
+     "claim": "живой API-срез: наличие файла и вердикт последнего прогона по каждому телу"
+    }
+   ],
+   "version": "wave-2026-11-19",
+   "verified_by": [
+    "api_snapshot"
+   ],
+   "scaffold": true,
+   "replaceable_by": [
+    "расширение флота новыми телами + повторный срез"
+   ],
+   "falsification_or_revision_condition": "Срез API показывает отсутствие файла в подключённом теле или лишнее тело без законного состояния.",
+   "depends_on": {
+    "build": [
+     "protocol-fsm"
+    ],
+    "runtime": []
+   },
+   "status": "PASS",
+   "evidence": [
+    {
+     "check": "Срез API по 46 телам (contents + actions/runs)",
+     "result": "файл есть в 46 из 46; markitdown-форк — законное состояние (CI форка выключен владельцем)",
+     "date": "2026-11-19",
+     "source_ref": "evidence/protocol_runs.csv"
+    }
+   ]
+  },
+  {
+   "id": "fleet-green-i2",
+   "role": "STAGE",
+   "name": "Инвариант I-2: последний прогон зелёный во всех подключённых телах",
+   "source": [
+    {
+     "type": "artifact",
+     "uri": "evidence/protocol_runs.csv",
+     "claim": "вердикты последних прогонов protocol-verify/protocol по каждому телу"
+    }
+   ],
+   "version": "wave-2026-11-19",
+   "verified_by": [
+    "api_snapshot",
+    "lex_naturae"
+   ],
+   "scaffold": true,
+   "replaceable_by": [
+    "повторный срез после нового пуша"
+   ],
+   "falsification_or_revision_condition": "Любое тело даёт последний красный прогон вне реестра законных состояний.",
+   "depends_on": {
+    "build": [
+     "fleet-attach"
+    ],
+    "runtime": []
+   },
+   "status": "PASS",
+   "evidence": [
+    {
+     "check": "Подсчёт success-вердиктов в срезе",
+     "result": "last_green=45 из 46 подключённых; 1 тело (markitdown) вне CI по законному состоянию",
+     "date": "2026-11-19",
+     "source_ref": "evidence/protocol_runs.csv"
+    }
+   ]
+  },
+  {
+   "id": "claims-package",
+   "role": "STAGE",
+   "name": "Канон проверки claims: lex-naturae valid=true на этом пакете",
+   "source": [
+    {
+     "type": "artifact",
+     "uri": "evidence/summary.csv",
+     "claim": "сводка, выведенная из сырого среза и логов"
+    }
+   ],
+   "version": "claims-2026-11-19",
+   "verified_by": [
+    "lex_naturae",
+    "human_lfs_validator"
+   ],
+   "scaffold": true,
+   "replaceable_by": [
+    "перегон пакета с новой сессией"
+   ],
+   "falsification_or_revision_condition": "lex_naturae.py даёт valid=false или validate_graph.py отбивает структуру.",
+   "depends_on": {
+    "build": [
+     "fleet-green-i2"
+    ],
+    "runtime": []
+   },
+   "status": "PASS",
+   "evidence": [
+    {
+     "check": "Запуск validate_graph.py и lex_naturae.py на этом пакете",
+     "result": "STRUCTURE: PASS и valid=true (см. run_check.sh и логи приёмки)",
+     "date": "2026-11-19",
+     "source_ref": "evidence/summary.csv"
+    }
+   ]
+  }
+ ],
+ "rules": [
+  "каждый узел имеет верифицируемый source",
+  "терминальный статус только PASS/FAIL/PARTIAL/UNKNOWN"
+ ],
+ "declared_interfaces": [],
+ "declared_runtime_cycles": []
+}

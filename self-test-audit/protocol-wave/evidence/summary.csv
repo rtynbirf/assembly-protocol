@@ -1,0 +1,9 @@
+metric,value
+bodies,46
+attached,46
+last_green,45
+fsm_vectors_ok,15
+fsm_vectors_total,15
+fsm_illegal_caught,6
+fsm_illegal_total,6
+compendium_cases,12
