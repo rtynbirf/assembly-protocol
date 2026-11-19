@@ -18,7 +18,7 @@
     "measurement_value": 46,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
+    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
     "csv_row": 3,
     "csv_column": "value"
    }
@@ -43,7 +43,7 @@
     "measurement_value": 45,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
+    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
     "csv_row": 4,
     "csv_column": "value"
    }
@@ -68,7 +68,7 @@
     "measurement_value": 15,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
+    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
     "csv_row": 5,
     "csv_column": "value"
    }
@@ -93,7 +93,7 @@
     "measurement_value": 12,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
+    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
     "csv_row": 9,
     "csv_column": "value"
    }
@@ -175,7 +175,7 @@
     "measurement_value": 44,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
+    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
     "csv_row": 11,
     "csv_column": "value"
    }
@@ -200,9 +200,67 @@
     "measurement_value": 45,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
+    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
     "csv_row": 13,
     "csv_column": "value"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-SEC-001",
+  "statement": "Dependabot vulnerability alerts включены API-каналом на 46 из 46 живых тел флота (уже были: 45, включены этим обходом: assembly-protocol); 30 архивов иммунны (PUT → 422 read-only, §4); secret scanning через REST недоступен (404 ×5 доме-ядро — настройка UI); автофиксы (Dependabot PR) осознанно не включены — PR-шум на чужих орбитах, решение за Хозяином.",
+  "kind": "observation",
+  "scope": "флот аккаунта rtynbirf (76 репо: 46 живых + 30 архивных)",
+  "scope_id": "fleet.rtynbirf.security",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Решение об автофиксах в протоколе обхода: осознанный отказ, не пропуск",
+    "method": "log_analysis",
+    "result": "строка найдена verbatim в security_sweep.json",
+    "protocol": "Чтение протокола секьюрити-обхода; excerpt копируется байт-в-байт из артефакта",
+    "raw_data_ref": "evidence/security_sweep.json",
+    "raw_data_sha256": "45af18b830f22cf2bfb5ef904fb400737546217d6c75dd77edf2eff98d87fb94",
+    "excerpt": "\"autofix_decision\": \"НЕ ВКЛЮЧЁН (PR-шум на чужих орбитах; решение за Хозяином)\""
+   },
+   {
+    "description": "Физическая строка единственного тела, включённого этим обходом (assembly-protocol)",
+    "method": "log_analysis",
+    "result": "строка alerts: off -> put204->on найдена verbatim в security_sweep.csv",
+    "protocol": "Построчный разбор CSV-протокола обхода; excerpt — точная строка файла",
+    "raw_data_ref": "evidence/security_sweep.csv",
+    "raw_data_sha256": "e7b79a38ddf82e653e2262ae3a4a2e4d78280ebcd969191c3b0198c4daeb7031",
+    "excerpt": "assembly-protocol,False,off,put204->on\ncell-rs,False,on,already_on\ncell-swarm,False,on,already_on"
+   },
+   {
+    "description": "Сводка пакета: физическая строка 22, метрика sec_alerts_on (живые тела под алертами)",
+    "method": "measurement",
+    "result": "summary.csv: sec_alerts_on = 46",
+    "protocol": "Сверка ячейки CSV: строка ищется сканом метрики, значение сверяется с measurement_value",
+    "instrument": "add_sec_claim.py + lex_naturae.py",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 46.0,
+    "tolerance": 0.0,
+    "csv_row": 22,
+    "csv_column": "value",
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae"
+   },
+   {
+    "description": "Сводка пакета: физическая строка 24, метрика sec_archived_422 (архивы read-only)",
+    "method": "measurement",
+    "result": "summary.csv: sec_archived_422 = 30",
+    "protocol": "Сверка ячейки CSV: строка ищется сканом метрики, значение сверяется с measurement_value",
+    "instrument": "add_sec_claim.py + lex_naturae.py",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 30.0,
+    "tolerance": 0.0,
+    "csv_row": 24,
+    "csv_column": "value",
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae"
    }
   ]
  },
@@ -245,7 +303,7 @@
     "csv_row": 17,
     "csv_column": "value",
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514"
+    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae"
    },
    {
     "description": "Сводка пакета: физическая строка 18, метрика gate_dispatch_422 (dispatch-пробок с 422)",
@@ -260,7 +318,7 @@
     "csv_row": 18,
     "csv_column": "value",
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514"
+    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae"
    }
   ]
  }

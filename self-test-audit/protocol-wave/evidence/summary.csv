@@ -17,3 +17,10 @@ guard_fail,0
 gate_probes,11
 gate_dispatch_422,3
 gate_rest_exhausted,1
+sec_repos_total,76
+sec_live,46
+sec_alerts_on,46
+sec_alerts_new,1
+sec_archived_422,30
+sec_secret_scan_rest,0
+sec_autofix_enabled,0
