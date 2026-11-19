@@ -1,3 +1,19 @@
+<div align="center">
+
+<a href="https://github.com/rtynbirf/assembly-protocol"><img src="banner.png" width="100%" alt="assembly-protocol — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
+</div>
+
+<!--ФОРЖ:ПАСПОРТ:НАЧАЛО-->
+<div align="center">
+  <img src="revo-page.svg" width="100%" alt="РЕВО-паспорт страницы assembly-protocol в каноне ORNAMENTAL MYTHO-REALISM: орнаментальная решётка, медальон-миф, строение файлов, лексикон — по фактическому контенту" />
+</div>
+
+| ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
+|---:|---:|---:|---|---:|
+| 53 | 7 | 22 | 2026-11-19 | 0 |
+<!--ФОРЖ:ПАСПОРТ:КОНЕЦ-->
+
 # assembly-protocol
 
 Верификация через исполнение: протокол сборки v7. Ни одно положение не считается
