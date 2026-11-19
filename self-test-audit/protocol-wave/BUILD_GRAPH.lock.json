@@ -1,0 +1,12 @@
+{
+  "nodes": {
+    "claims-package": "1b2c97c5470f584e1ebdc23b85f2f487054e8d0839c66cd569629a58cc04d3cc",
+    "fleet-attach": "9fbef10a1967e22c185ed632f4aab8f7dc0fc6eded6c3ecee5dc0db9406ce38b",
+    "fleet-green-i2": "5f3370f5a5deebe872af4a1145bc6abe90d634d75c2561cf64d8b45bec964e86",
+    "fleet-guard": "6c82755b355801967854b996ff1b114a0c80bce015436790b3f913c3352119c4",
+    "markitdown-gate": "bc23a945dace3001873ef799d030c2131aa5ea8dafd7cd84046f4372924357cd",
+    "protocol-fsm": "15bb6f9149e1c3dde9891212447191bee23c54c1a515cf80b4fa3a29588330d0",
+    "protocol-v7-patches": "5ef4c289bf4ea6a0e306d01278cc38cb355486bf794edb7cfa52c68254d21aa1",
+    "witness-wave": "1d6aa1d04eb23af07b0ca5cb7a64d1a406da08301482de52dbe4e600ee8b7bd4"
+  }
+}

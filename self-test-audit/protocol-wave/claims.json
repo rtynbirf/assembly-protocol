@@ -18,7 +18,7 @@
     "measurement_value": 46,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
+    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
     "csv_row": 3,
     "csv_column": "value"
    }
@@ -43,7 +43,7 @@
     "measurement_value": 45,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
+    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
     "csv_row": 4,
     "csv_column": "value"
    }
@@ -68,7 +68,7 @@
     "measurement_value": 15,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
+    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
     "csv_row": 5,
     "csv_column": "value"
    }
@@ -93,7 +93,7 @@
     "measurement_value": 12,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
+    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
     "csv_row": 9,
     "csv_column": "value"
    }
@@ -175,7 +175,7 @@
     "measurement_value": 44,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
+    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
     "csv_row": 11,
     "csv_column": "value"
    }
@@ -200,9 +200,67 @@
     "measurement_value": 45,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
+    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514",
     "csv_row": 13,
     "csv_column": "value"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-GATE-001",
+  "statement": "Ворота Actions форка markitdown недостижимы REST-каналом: протокол 11 проб (permissions enabled=true, workflow state=active, PUT enable 204/204, dispatch 422 «Actions has been disabled for this repository.» ×3 — до enable, после enable и после цикла disable→enable; rerun queued 403; check-suites головы пусты). Остаток = UI-консент форка; узел опровергается любым dispatch 204 или зелёным прогоном.",
+  "kind": "observation",
+  "scope": "репозиторий rtynbirf/markitdown (форк, 46-е тело флота)",
+  "scope_id": "fleet.rtynbirf.markitdown",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Вердикт машинного протокола проб: противоречие enabled=true против dispatch 422 стабильно",
+    "method": "log_analysis",
+    "result": "ключевая фраза вердикта найдена verbatim в markitdown_gate.json; dispatch-пробок с кодом 422: 3",
+    "protocol": "Чтение verdict.conclusion из JSON-протокола проб; excerpt копируется байт-в-байт из артефакта",
+    "raw_data_ref": "evidence/markitdown_gate.json",
+    "raw_data_sha256": "39090e883668364d2e284c46cf731f36719c4c56cc56d107f1adceda15b31177",
+    "excerpt": "ПРОТИВОРЕЧИЕ СТАБИЛЬНО: permissions.enabled=true и workflow state=active при dispatch 422 «Actions has been disabled for this repository.»"
+   },
+   {
+    "description": "Физическая строка dispatch-пробы с кодом 422 в сводной таблице проб",
+    "method": "log_analysis",
+    "result": "строка с http_code=422 найдена verbatim в markitdown_gate.csv",
+    "protocol": "Построчный разбор CSV-протокола проб; excerpt — точная строка файла",
+    "raw_data_ref": "evidence/markitdown_gate.csv",
+    "raw_data_sha256": "0161fdf231ec0e452859ae2bc976269fe81d38077d49bc0f065220f36a2b05c4",
+    "excerpt": "6,2026-11-19T15:55:13Z,POST,/actions/workflows/protocol-verify.yml/dispatches,422,\"{\"\"message\"\": \"\"Actions has been disabled for this repository.\"\", \"\"documentation_url\"\": \"\"https://docs.github.com/rest/actions/workflows#create-a-workflow-dispatch-event\"\", \"\"status\"\": \"\"422\""
+   },
+   {
+    "description": "Сводка пакета: физическая строка 17, метрика gate_probes (число REST-проб)",
+    "method": "measurement",
+    "result": "summary.csv: gate_probes = 11",
+    "protocol": "Сверка ячейки CSV: строка ищется сканом метрики, значение сверяется с measurement_value",
+    "instrument": "fix_gate_claim.py + lex_naturae.py",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 11.0,
+    "tolerance": 0.0,
+    "csv_row": 17,
+    "csv_column": "value",
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514"
+   },
+   {
+    "description": "Сводка пакета: физическая строка 18, метрика gate_dispatch_422 (dispatch-пробок с 422)",
+    "method": "measurement",
+    "result": "summary.csv: gate_dispatch_422 = 3",
+    "protocol": "Сверка ячейки CSV: строка ищется сканом метрики, значение сверяется с measurement_value",
+    "instrument": "fix_gate_claim.py + lex_naturae.py",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 3.0,
+    "tolerance": 0.0,
+    "csv_row": 18,
+    "csv_column": "value",
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "281eaa0b4f059a55539518c2ef267523101e6bd52c614a59b064f7a51183a514"
    }
   ]
  }

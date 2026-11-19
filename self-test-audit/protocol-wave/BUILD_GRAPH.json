@@ -216,7 +216,7 @@
    "falsification_or_revision_condition": "lex_naturae.py даёт valid=false или validate_graph.py отбивает структуру.",
    "depends_on": {
     "build": [
-     "fleet-guard"
+     "markitdown-gate"
     ],
     "runtime": []
    },
@@ -265,6 +265,48 @@
      "result": "тела=46, PASS=45, GATED-LEGAL=1 (markitdown), PENDING=0, FAIL=0; автомат 15/15 и 6/6 исполнен раннером",
      "date": "2026-11-19",
      "source_ref": "evidence/fleet_verdict.csv"
+    }
+   ]
+  },
+  {
+   "id": "markitdown-gate",
+   "role": "STAGE",
+   "name": "Ворота markitdown: REST-канал исчерпан протоколом проб, остаток = UI-консент форка",
+   "source": [
+    {
+     "type": "artifact",
+     "uri": "evidence/markitdown_gate.json",
+     "claim": "машинный протокол REST-проб: тела ответов GitHub API с кодами"
+    },
+    {
+     "type": "artifact",
+     "uri": "evidence/markitdown_gate.csv",
+     "claim": "сводная таблица проб: метод, endpoint, http_code, исход"
+    }
+   ],
+   "version": "gate-2026-11-19",
+   "verified_by": [
+    "api_probe",
+    "lex_naturae"
+   ],
+   "scaffold": true,
+   "replaceable_by": [
+    "UI-консент форка → dispatch 204 → зелёный прогон → узел перевешивается в ветку fleet-green-i2"
+   ],
+   "falsification_or_revision_condition": "Любая повторная проба даёт dispatch 204 или зелёный прогон protocol-verify на markitdown — узел ЛОЖЕН, 46/46 замыкается и узел переписывается.",
+   "depends_on": {
+    "build": [
+     "fleet-guard"
+    ],
+    "runtime": []
+   },
+   "status": "PASS",
+   "evidence": [
+    {
+     "check": "Протокол REST-проб: GET permissions, GET workflows, PUT enable ×2, POST dispatches ×3, PUT permissions цикл, POST rerun, GET check-suites",
+     "result": "проб=11; dispatch 422 ×3 при enabled=true и state=active — противоречие стабильно до и после enable и цикла disable→enable; rerun 403; check-suites головы пусты",
+     "date": "2026-11-19",
+     "source_ref": "evidence/markitdown_gate.json"
     }
    ]
   }

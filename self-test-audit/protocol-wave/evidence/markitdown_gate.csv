@@ -1,0 +1,12 @@
+probe_id,utc,method,endpoint,http_code,outcome
+1,2026-11-19T15:55:10Z,GET,/actions/permissions,200,"{""enabled"": true, ""allowed_actions"": ""all"", ""sha_pinning_required"": false}"
+2,2026-11-19T15:55:10Z,GET,,200,"{""id"": 1449622439, ""node_id"": ""R_kgDOVmd7pw"", ""name"": ""markitdown"", ""full_name"": ""rtynbirf/markitdown"", ""private"": false, ""owner"": {""login"": ""rtynbirf"", ""id"": 119601232, ""node_id"":"
+3,2026-11-19T15:55:11Z,GET,/actions/workflows,200,"{""total_count"": 11, ""workflows"": [{""id"": 423500606, ""node_id"": ""W_kwDOVmd7p84ZPhs-"", ""name"": ""CodeQL"", ""path"": "".github/workflows/codeql.yml"", ""state"": ""active"", ""created_at"": ""202"
+4,2026-11-19T15:55:12Z,PUT,/actions/workflows/423707088/enable,204,{}
+5,2026-11-19T15:55:13Z,PUT,/actions/workflows/423722319/enable,204,{}
+6,2026-11-19T15:55:13Z,POST,/actions/workflows/protocol-verify.yml/dispatches,422,"{""message"": ""Actions has been disabled for this repository."", ""documentation_url"": ""https://docs.github.com/rest/actions/workflows#create-a-workflow-dispatch-event"", ""status"": ""422"
+7,2026-11-19T15:55:14Z,POST,/actions/workflows/invariant-witness.yml/dispatches,422,"{""message"": ""Actions has been disabled for this repository."", ""documentation_url"": ""https://docs.github.com/rest/actions/workflows#create-a-workflow-dispatch-event"", ""status"": ""422"
+8,2026-11-19T15:55:14Z,PUT,/actions/permissions,204,{}
+9,2026-11-19T15:55:15Z,POST,/actions/workflows/protocol-verify.yml/dispatches,422,"{""message"": ""Actions has been disabled for this repository."", ""documentation_url"": ""https://docs.github.com/rest/actions/workflows#create-a-workflow-dispatch-event"", ""status"": ""422"
+10,2026-11-19T15:55:16Z,POST,/actions/runs/44545464031/rerun,403,"{""message"": ""This workflow run cannot be retried"", ""documentation_url"": ""https://docs.github.com/rest/actions/workflow-runs#re-run-a-workflow"", ""status"": ""403""}"
+11,2026-11-19T15:55:16Z,GET,/commits/main/check-suites,200,"{""total_count"": 0, ""check_suites"": []}"

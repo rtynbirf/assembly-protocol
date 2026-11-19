@@ -1,0 +1,124 @@
+{
+ "probe_protocol": "ворота Actions форка markitdown: все доступные REST-ходы до исчерпания",
+ "utc_started": "2026-11-19T15:55:10Z",
+ "probes": [
+  {
+   "n": 1,
+   "utc": "2026-11-19T15:55:10Z",
+   "method": "GET",
+   "endpoint": "/actions/permissions",
+   "http_code": 200,
+   "body": "{\"enabled\": true, \"allowed_actions\": \"all\", \"sha_pinning_required\": false}"
+  },
+  {
+   "n": 2,
+   "utc": "2026-11-19T15:55:10Z",
+   "method": "GET",
+   "endpoint": "",
+   "http_code": 200,
+   "body": ""
+  },
+  {
+   "n": 3,
+   "utc": "2026-11-19T15:55:11Z",
+   "method": "GET",
+   "endpoint": "/actions/workflows",
+   "http_code": 200,
+   "body": "{\"total_count\": 11, \"workflows\": [{\"id\": 423500606, \"node_id\": \"W_kwDOVmd7p84ZPhs-\", \"name\": \"CodeQL\", \"path\": \".github/workflows/codeql.yml\", \"state\": \"active\", \"created_at\": \"2026-11-19T09:45:30.000+03:00\", \"updated_at\": \"2026-11-19T09:45:30.000+03:00\", \"url\": \"https://api.github.com/repos/rtynbirf/markitdown/actions/workflows/423500606\", \"html_url\": \"https://github.com/rtynbirf/markitdown/blob/main/.github/workflows/codeql.yml\", \"badge_url\": \"https://github.com/rtynbirf/markitdown/workflows/CodeQL/badge.svg\"}, {\"id\": 411428106, \"node_id\": \"W_kwDOVmd7p84YheUK\", \"name\": \"fork-diff\", \"path\": \".github/workflows/fork-diff.yml\", \"state\": \"disabled_manually\", \"created_at\": \"2026-11-08T23:10:14.000+03:00\", \"updated_at\": \"2026-11-18T21:16:00.000+03:00\", \"url\": \"https://api.github.com/repos/rtynbirf/markitdown/actions/workflows/411428106\", \"html_url\": \"https://github.com/rtynbirf/markitdown/blob/main/.github/workflows/fork-diff.yml\", \"badge_url\": \"https://github.com/rtynbirf/markitdown/workflows/fork-diff/badge.svg\"}, {\"id\": 423722319, \"node_id\": \"W_kwDOVmd7p84ZQX1P\", \"name\": \"invariant-witness\", \"path\": \".github/workflows/invariant-witness.yml\", \"state\": \"active\", \"created_at\": \"2026-11-19T14:00:00.000+03:00\", \"updated_at\": \"2026-11-19T18:50:16.000+03:00\", \"url\": \"https://api.github.com/repos/rtynbirf/markitdown/actions/workflows/423722319\", \"html_url\": \"https://github.com/rtynbirf/markitdown/blob/main/.github/workflows/invariant-witness.yml\", \"badge_url\": \"https://github.com/rtynbirf/markitdown/workflows/invariant-witness/badge.svg\"}, {\"id\": 423799419, \"node_id\": \"W_kwDOVmd7p84ZQqp7\", \"name\": \"летопись-страж\", \"path\": \".github/workflows/ledger-guard.yml\", \"state\": \"active\", \"created_at\": \"2026-11-19T15:18:41.000+03:00\", \"updated_at\": \"2026-11-19T15:18:41.000+03:00\", \"url\": \"https://api.github.com/repos/rtynbirf/markitdown/actions/workflows/423799419\", \"html_url\": \"https://github.com/rtynbirf/markitdown/blob/main/.github/workflows/ledger-guard.yml\", \"badge_url\": \"https://"
+  },
+  {
+   "n": 4,
+   "utc": "2026-11-19T15:55:12Z",
+   "method": "PUT",
+   "endpoint": "/actions/workflows/423707088/enable",
+   "http_code": 204,
+   "body": "{}"
+  },
+  {
+   "n": 5,
+   "utc": "2026-11-19T15:55:13Z",
+   "method": "PUT",
+   "endpoint": "/actions/workflows/423722319/enable",
+   "http_code": 204,
+   "body": "{}"
+  },
+  {
+   "n": 6,
+   "utc": "2026-11-19T15:55:13Z",
+   "method": "POST",
+   "endpoint": "/actions/workflows/protocol-verify.yml/dispatches",
+   "http_code": 422,
+   "body": "{\"message\": \"Actions has been disabled for this repository.\", \"documentation_url\": \"https://docs.github.com/rest/actions/workflows#create-a-workflow-dispatch-event\", \"status\": \"422\"}"
+  },
+  {
+   "n": 7,
+   "utc": "2026-11-19T15:55:14Z",
+   "method": "POST",
+   "endpoint": "/actions/workflows/invariant-witness.yml/dispatches",
+   "http_code": 422,
+   "body": "{\"message\": \"Actions has been disabled for this repository.\", \"documentation_url\": \"https://docs.github.com/rest/actions/workflows#create-a-workflow-dispatch-event\", \"status\": \"422\"}"
+  },
+  {
+   "n": 8,
+   "utc": "2026-11-19T15:55:14Z",
+   "method": "PUT",
+   "endpoint": "/actions/permissions",
+   "http_code": 204,
+   "body": "{}"
+  },
+  {
+   "n": 9,
+   "utc": "2026-11-19T15:55:15Z",
+   "method": "POST",
+   "endpoint": "/actions/workflows/protocol-verify.yml/dispatches",
+   "http_code": 422,
+   "body": "{\"message\": \"Actions has been disabled for this repository.\", \"documentation_url\": \"https://docs.github.com/rest/actions/workflows#create-a-workflow-dispatch-event\", \"status\": \"422\"}"
+  },
+  {
+   "n": 10,
+   "utc": "2026-11-19T15:55:16Z",
+   "method": "POST",
+   "endpoint": "/actions/runs/44545464031/rerun",
+   "http_code": 403,
+   "body": "{\"message\": \"This workflow run cannot be retried\", \"documentation_url\": \"https://docs.github.com/rest/actions/workflow-runs#re-run-a-workflow\", \"status\": \"403\"}"
+  },
+  {
+   "n": 11,
+   "utc": "2026-11-19T15:55:16Z",
+   "method": "GET",
+   "endpoint": "/commits/main/check-suites",
+   "http_code": 200,
+   "body": ""
+  }
+ ],
+ "workflow_states": {
+  "codeql.yml": "active",
+  "fork-diff.yml": "disabled_manually",
+  "invariant-witness.yml": "active",
+  "ledger-guard.yml": "active",
+  "pre-commit.yml": "disabled_manually",
+  "protocol-verify.yml": "active",
+  "revo-obhod.yml": "disabled_manually",
+  "scorecard.yml": "active",
+  "tests.yml": "disabled_manually",
+  "update-graph": "active",
+  "codeql": "active"
+ },
+ "utc_finished": "2026-11-19T15:55:17Z",
+ "verdict": {
+  "permissions_enabled": true,
+  "allowed_actions": "all",
+  "is_fork": true,
+  "repo_disabled": false,
+  "dispatch_codes": [
+   422,
+   422,
+   422
+  ],
+  "dispatch_message": "Actions has been disabled for this repository.",
+  "rerun_code": 403,
+  "rerun_message": "This workflow run cannot be retried",
+  "check_suites_on_head": 0,
+  "conclusion": "ПРОТИВОРЕЧИЕ СТАБИЛЬНО: permissions.enabled=true и workflow state=active при dispatch 422 «Actions has been disabled for this repository.» — три dispatch-пробки (до enable, после enable, после цикла disable→enable) дают один и тот же барьер. REST-канал исчерпан; ворота = UI-консент форка («Workflows aren't being run on this fork»). Ложность узла: любой повтор проб с dispatch 204 или зелёным прогоном опровергает узел."
+ }
+}
