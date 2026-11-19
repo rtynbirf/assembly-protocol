@@ -24,3 +24,6 @@ sec_alerts_new,1
 sec_archived_422,30
 sec_secret_scan_rest,0
 sec_autofix_enabled,0
+dogovor_cards,5
+dogovor_fsm_vectors,16
+dogovor_guard_green,1

@@ -216,7 +216,7 @@
    "falsification_or_revision_condition": "lex_naturae.py даёт valid=false или validate_graph.py отбивает структуру.",
    "depends_on": {
     "build": [
-     "markitdown-gate"
+     "dogovor-contract"
     ],
     "runtime": []
    },
@@ -307,6 +307,43 @@
      "result": "проб=11; dispatch 422 ×3 при enabled=true и state=active — противоречие стабильно до и после enable и цикла disable→enable; rerun 403; check-suites головы пусты",
      "date": "2026-11-19",
      "source_ref": "evidence/markitdown_gate.json"
+    }
+   ]
+  },
+  {
+   "id": "dogovor-contract",
+   "role": "STAGE",
+   "name": "Договор агента: правила-карточки 6 строк + автомат статусов; сбои живут в реестре 22",
+   "source": [
+    {
+     "type": "artifact",
+     "uri": "evidence/dogovor_fsm.log",
+     "claim": "машинный вывод самотеста и проверки карточек"
+    }
+   ],
+   "version": "dogovor-2026-11-19",
+   "verified_by": [
+    "run",
+    "lex_naturae"
+   ],
+   "scaffold": true,
+   "replaceable_by": [
+    "ПОДТВЕРЖДЕНО карточек после двух разных исполнителей реальных случаев (не раньше 2026-12-04)"
+   ],
+   "falsification_or_revision_condition": "Красный страж dogovor-guard на пуш или карточка СТАТУС ЛОЖЕН/КАРТОЧКА КРИВАЯ — узел пересматривается.",
+   "depends_on": {
+    "build": [
+     "markitdown-gate"
+    ],
+    "runtime": []
+   },
+   "status": "PASS",
+   "evidence": [
+    {
+     "check": "Прогон автомата: самотест 16/16 векторов, карточки 5/5 ЧИТАЕМО, страж CI зелёный на пушe 001fe73",
+     "result": "ДОГОВОР: векторы 16/16; карточек 5, ЧИТАЕМО 5; dogovor-guard completed success",
+     "date": "2026-11-19",
+     "source_ref": "evidence/dogovor_fsm.log"
     }
    ]
   }

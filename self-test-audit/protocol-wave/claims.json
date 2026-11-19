@@ -18,7 +18,7 @@
     "measurement_value": 46,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0",
     "csv_row": 3,
     "csv_column": "value"
    }
@@ -43,7 +43,7 @@
     "measurement_value": 45,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0",
     "csv_row": 4,
     "csv_column": "value"
    }
@@ -68,7 +68,7 @@
     "measurement_value": 15,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0",
     "csv_row": 5,
     "csv_column": "value"
    }
@@ -93,7 +93,7 @@
     "measurement_value": 12,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0",
     "csv_row": 9,
     "csv_column": "value"
    }
@@ -175,7 +175,7 @@
     "measurement_value": 44,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0",
     "csv_row": 11,
     "csv_column": "value"
    }
@@ -200,7 +200,7 @@
     "measurement_value": 45,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae",
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0",
     "csv_row": 13,
     "csv_column": "value"
    }
@@ -245,7 +245,7 @@
     "csv_row": 22,
     "csv_column": "value",
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae"
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0"
    },
    {
     "description": "Сводка пакета: физическая строка 24, метрика sec_archived_422 (архивы read-only)",
@@ -260,7 +260,7 @@
     "csv_row": 24,
     "csv_column": "value",
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae"
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0"
    }
   ]
  },
@@ -303,7 +303,7 @@
     "csv_row": 17,
     "csv_column": "value",
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae"
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0"
    },
    {
     "description": "Сводка пакета: физическая строка 18, метрика gate_dispatch_422 (dispatch-пробок с 422)",
@@ -318,7 +318,57 @@
     "csv_row": 18,
     "csv_column": "value",
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "1ba8f0ee45a68839cb49bda783d9fb7d5a5b082017e74e17bcc10a1c2e7d66ae"
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-DOGV-001",
+  "statement": "Договор агента создан и исполняется: репо rtynbirf/dogovor, 5 карточек из реальных шрамов дома (Е26/Е31/Е32/Е28/Е23, закон №11) в статусе ПИЛОТ с датой конца 2026-12-04, автомат dogovor_fsm.py (статусы, переходы, лимит читаемости, вето не снимает границы) самотест 16/16 и карточки 5/5 ЧИТАЕМО; страж dogovor-guard зелёный на первом пушe (001fe73); журнала сбоев в репо нет — сбой-журнал дома = реестр 22 (append-only, без имён); честный статус всего договора: ПИЛОТ, ПОДТВЕРЖДЕНО дают только два разных исполнителя реальных случаев.",
+  "kind": "observation",
+  "scope": "репозиторий rtynbirf/dogovor (договор агента, правило = карточка + автомат)",
+  "scope_id": "dogovor.rtynbirf",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Машинный вывод автомата: самотест векторов и проверка карточек",
+    "method": "log_analysis",
+    "result": "строки сводки найдены verbatim в dogovor_fsm.log",
+    "protocol": "Прогон dogovor_fsm.py --selftest и --check kartochki; вывод записан машиной",
+    "instrument": "dogovor_fsm.py v1",
+    "raw_data_ref": "evidence/dogovor_fsm.log",
+    "raw_data_sha256": "2d45ceebdb9b1fe8bd373dfc114c8b378ebc962fb5350e3867c7e3462dc7b52f",
+    "excerpt": "ДОГОВОР: векторы 16/16; незаконные переходы пойманы; все вердикты достижимы"
+   },
+   {
+    "description": "Сводка пакета: физическая строка 27, метрика dogovor_cards",
+    "method": "measurement",
+    "result": "summary.csv: dogovor_cards = 5",
+    "protocol": "Сверка ячейки CSV: строка ищется сканом метрики",
+    "instrument": "add_dogovor_claim.py + lex_naturae.py",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 5.0,
+    "tolerance": 0.0,
+    "csv_row": 27,
+    "csv_column": "value",
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0"
+   },
+   {
+    "description": "Сводка пакета: физическая строка 28, метрика dogovor_fsm_vectors",
+    "method": "measurement",
+    "result": "summary.csv: dogovor_fsm_vectors = 16",
+    "protocol": "Сверка ячейки CSV: строка ищется сканом метрики",
+    "instrument": "add_dogovor_claim.py + lex_naturae.py",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 16.0,
+    "tolerance": 0.0,
+    "csv_row": 28,
+    "csv_column": "value",
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "aa6f4b9a73308ffaa245f8a1daab1c9e23c5ea8e25713c624d0a8445234a35a0"
    }
   ]
  }

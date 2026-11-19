@@ -1,6 +1,7 @@
 {
   "nodes": {
-    "claims-package": "1b2c97c5470f584e1ebdc23b85f2f487054e8d0839c66cd569629a58cc04d3cc",
+    "claims-package": "1f2da2682f7494e3fc25d18d3a15737a7520217a12c55e6916be130eb2125796",
+    "dogovor-contract": "940f1ea7a97710f79b19ae05277c3936b454a9f1ed11337c9699be2d6ef3822c",
     "fleet-attach": "9fbef10a1967e22c185ed632f4aab8f7dc0fc6eded6c3ecee5dc0db9406ce38b",
     "fleet-green-i2": "5f3370f5a5deebe872af4a1145bc6abe90d634d75c2561cf64d8b45bec964e86",
     "fleet-guard": "6c82755b355801967854b996ff1b114a0c80bce015436790b3f913c3352119c4",
