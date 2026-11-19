@@ -113,7 +113,7 @@
    "evidence": [
     {
      "check": "Срез API по 46 телам (contents + actions/runs)",
-     "result": "файл есть в 46 из 46; markitdown-форк — законное состояние (CI форка выключен владельцем)",
+     "result": "файл есть в 46 из 46; markitdown-форк — законное состояние (Actions требует UI-консента владельца; API-флаг enabled=true не снимает ворота)",
      "date": "2026-11-19",
      "source_ref": "evidence/protocol_runs.csv"
     }
@@ -157,6 +157,43 @@
    ]
   },
   {
+   "id": "witness-wave",
+   "role": "STAGE",
+   "name": "СВИДЕТЕЛЬ РОЯ: dispatch во все тела с witness-файлом, сбор подписей дерева",
+   "source": [
+    {
+     "type": "artifact",
+     "uri": "evidence/witness_runs.csv",
+     "claim": "живой API-срез вердиктов invariant-witness по каждому телу после волны dispatch"
+    }
+   ],
+   "version": "witness-2026-11-19",
+   "verified_by": [
+    "api_snapshot",
+    "lex_naturae"
+   ],
+   "scaffold": true,
+   "replaceable_by": [
+    "повторная волна dispatch после изменения дерева любого тела"
+   ],
+   "falsification_or_revision_condition": "Тело с witness-файлом даёт последний красный прогон или dispatch не доходит вне реестра законных состояний.",
+   "depends_on": {
+    "build": [
+     "fleet-green-i2"
+    ],
+    "runtime": []
+   },
+   "status": "PASS",
+   "evidence": [
+    {
+     "check": "Dispatch invariant-witness в 45 тел + переполлинг прогонов",
+     "result": "44 зелёных подписи дерева; markitdown — законное состояние (ворота консента форка)",
+     "date": "2026-11-19",
+     "source_ref": "evidence/witness_runs.csv"
+    }
+   ]
+  },
+  {
    "id": "claims-package",
    "role": "STAGE",
    "name": "Канон проверки claims: lex-naturae valid=true на этом пакете",
@@ -179,7 +216,7 @@
    "falsification_or_revision_condition": "lex_naturae.py даёт valid=false или validate_graph.py отбивает структуру.",
    "depends_on": {
     "build": [
-     "fleet-green-i2"
+     "witness-wave"
     ],
     "runtime": []
    },

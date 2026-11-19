@@ -18,7 +18,7 @@
     "measurement_value": 46,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "b08f4d9af3c8a42ba30d73b84424a8a04e7a530cc5f91f639f068d2e0a6aa8b8",
+    "raw_data_sha256": "530ac1791f3ec5d251b1e1d13f6787836140489c02fdeb48cbbbe6cb3b6c6dab",
     "csv_row": 3,
     "csv_column": "value"
    }
@@ -43,7 +43,7 @@
     "measurement_value": 45,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "b08f4d9af3c8a42ba30d73b84424a8a04e7a530cc5f91f639f068d2e0a6aa8b8",
+    "raw_data_sha256": "530ac1791f3ec5d251b1e1d13f6787836140489c02fdeb48cbbbe6cb3b6c6dab",
     "csv_row": 4,
     "csv_column": "value"
    }
@@ -68,7 +68,7 @@
     "measurement_value": 15,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "b08f4d9af3c8a42ba30d73b84424a8a04e7a530cc5f91f639f068d2e0a6aa8b8",
+    "raw_data_sha256": "530ac1791f3ec5d251b1e1d13f6787836140489c02fdeb48cbbbe6cb3b6c6dab",
     "csv_row": 5,
     "csv_column": "value"
    }
@@ -93,7 +93,7 @@
     "measurement_value": 12,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "b08f4d9af3c8a42ba30d73b84424a8a04e7a530cc5f91f639f068d2e0a6aa8b8",
+    "raw_data_sha256": "530ac1791f3ec5d251b1e1d13f6787836140489c02fdeb48cbbbe6cb3b6c6dab",
     "csv_row": 9,
     "csv_column": "value"
    }
@@ -153,6 +153,31 @@
     "raw_data_ref": "evidence/compendium_run.log",
     "raw_data_sha256": "637a5d6343a92180ea19c3d98d977762a9be6c1efc8558826ab6350d9aa3d38f",
     "excerpt": "СЧЁТ: v6 — «верифицировано» у 11 из 12 (в том числе у пустых и несверяемых);"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-WIT-001",
+  "statement": "СВИДЕТЕЛЬ РОЯ вызван dispatch-ем во все 45 тел с witness-файлом; 44 прогонов зелёные, 1 тело (markitdown) — законное состояние (ворота консента форка).",
+  "kind": "observation",
+  "scope": "флот аккаунта rtynbirf",
+  "scope_id": "fleet.rtynbirf",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Число зелёных witness-прогонов по срезу API после волны dispatch",
+    "method": "measurement",
+    "result": "summary.csv строка 11, колонка value = 44",
+    "protocol": "Значение выведено скриптом из живого API-среза; сверка ячейки CSV",
+    "instrument": "GitHub REST API (actions/workflows + dispatches)",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 44,
+    "tolerance": 0.0,
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "530ac1791f3ec5d251b1e1d13f6787836140489c02fdeb48cbbbe6cb3b6c6dab",
+    "csv_row": 11,
+    "csv_column": "value"
    }
   ]
  }
