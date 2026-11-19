@@ -12,8 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Механизм сборки (SSOT: rtynbirf/assembly-protocol)
+        uses: actions/checkout@v4
+        with:
+          repository: rtynbirf/assembly-protocol
+          ref: main
+          path: protocol
+          persist-credentials: false
+
       - name: 12 случаев, две формулы (v6 против v7)
-        run: python3 compendium_run.py
+        run: python3 protocol/compendium_run.py
 
       - name: Конечный автомат протокола (порядок расследования enforced)
-        run: python3 protocol_fsm.py
+        run: python3 protocol/protocol_fsm.py
