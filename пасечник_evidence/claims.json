@@ -1,0 +1,49 @@
+[
+  {
+    "claim_id": "PASICHNIK-MARK-001",
+    "statement": "Все живые (не в архиве) клетки флота rtynbirf несут печать topic `pid1`: 46 из 46.",
+    "kind": "observation",
+    "scope": "флот rtynbirf, прогон пасечник-автомата",
+    "scope_id": "pasichnik-fleet-2026-11-19t150819z",
+    "status": "UNKNOWN",
+    "evidence": [
+      {
+        "description": "Число живых клеток с печатью из сводки прогона",
+        "method": "measurement",
+        "result": "сводка.csv: marked_live_cells = 46 при live_cells = 46",
+        "protocol": "--mode audit перечитывает GET /users/rtynbirf/repos и классифицирует по TABLE",
+        "instrument": "пасечник_fsm.py run_audit",
+        "quantity": "count",
+        "unit": "count",
+        "measurement_value": 46,
+        "tolerance": 0,
+        "raw_data_ref": "сводка.csv",
+        "raw_data_sha256": "02ec0802bea2310a58e93bc0827047c7f4787205168d513a855ec3ee95237fd7",
+        "csv_row": 3,
+        "csv_column": "value"
+      }
+    ],
+    "links": []
+  },
+  {
+    "claim_id": "PASICHNIK-FSM-001",
+    "statement": "Самопроверка автомата: векторы и незаконные переходы отбиты без провалов.",
+    "kind": "observation",
+    "scope": "самопроверка пасечник_fsm.py --mode selftest",
+    "scope_id": "pasichnik.selftest",
+    "status": "UNKNOWN",
+    "evidence": [
+      {
+        "description": "Дословная строка итога самопроверки",
+        "method": "log_analysis",
+        "result": "selftest.log",
+        "protocol": "python3 пасечник_fsm.py --mode selftest; вывод записан дословно",
+        "instrument": "пасечник_fsm.py selftest",
+        "excerpt": "МЕХАНИЗМ ИСПОЛНЕН: 0 провалов.",
+        "raw_data_ref": "selftest.log",
+        "raw_data_sha256": "39194cb0580d9396fb27742be9099b9f5984e870f561a14707de4ae74e28f49f"
+      }
+    ],
+    "links": []
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "valid": true,
+  "claim_count": 2,
+  "claims": [
+    {
+      "valid": true,
+      "claim_id": "PASICHNIK-MARK-001",
+      "kind": "observation",
+      "status": "UNKNOWN",
+      "evidence_count": 1,
+      "evidence_verification": "CHECKED_AGAINST_LOCAL_ARTIFACTS",
+      "evidence_checks": [
+        "csv_cell_value"
+      ],
+      "strongest_check": "csv_cell_value",
+      "document_source_attribution": "NOT_APPLICABLE",
+      "link_count": 0,
+      "meaning": "No assessment has been established.",
+      "scope": "флот rtynbirf, прогон пасечник-автомата",
+      "claim_index": 0
+    },
+    {
+      "valid": true,
+      "claim_id": "PASICHNIK-FSM-001",
+      "kind": "observation",
+      "status": "UNKNOWN",
+      "evidence_count": 1,
+      "evidence_verification": "CHECKED_AGAINST_LOCAL_ARTIFACTS",
+      "evidence_checks": [
+        "text_excerpt"
+      ],
+      "strongest_check": "text_excerpt",
+      "document_source_attribution": "NOT_APPLICABLE",
+      "link_count": 0,
+      "meaning": "No assessment has been established.",
+      "scope": "самопроверка пасечник_fsm.py --mode selftest",
+      "claim_index": 1
+    }
+  ],
+  "graph_errors": [],
+  "graph_warnings": [],
+  "exit_code": 0
+}

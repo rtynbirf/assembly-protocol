@@ -1,0 +1,25 @@
+name: pasichnik
+on:
+  workflow_call:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pasichnik:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: rtynbirf/assembly-protocol
+          ref: main
+          persist-credentials: false
+
+      - name: "Самопроверка автомата (векторы + незаконные переходы)"
+        run: python3 пасечник_fsm.py --mode selftest
+
+      - name: "Анонимная сверка печати роя (знание не требует права; дрейф = честный красный)"
+        run: python3 пасечник_fsm.py --mode audit --out-dir /tmp/pasichnik
