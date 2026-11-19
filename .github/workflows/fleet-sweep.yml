@@ -1,0 +1,31 @@
+name: fleet-sweep
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "Страж роя: исполнение протокола на всех живых телах (I-2 автомат)"
+        run: python3 fleet_sweep.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Запись среза стража в дом (идемпотентно)"
+        run: |
+          if [ -n "$(git status --porcelain fleet)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add fleet
+            git commit -m "страж роя: срез обновлён, вердикты тел перезаписаны"
+            git push
+          else
+            echo "СРЕЗ БЕЗ ИЗМЕНЕНИЙ — коммита нет"
+          fi

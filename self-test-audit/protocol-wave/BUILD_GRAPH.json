@@ -216,7 +216,7 @@
    "falsification_or_revision_condition": "lex_naturae.py даёт valid=false или validate_graph.py отбивает структуру.",
    "depends_on": {
     "build": [
-     "witness-wave"
+     "fleet-guard"
     ],
     "runtime": []
    },
@@ -227,6 +227,44 @@
      "result": "STRUCTURE: PASS и valid=true (см. run_check.sh и логи приёмки)",
      "date": "2026-11-19",
      "source_ref": "evidence/summary.csv"
+    }
+   ]
+  },
+  {
+   "id": "fleet-guard",
+   "role": "STAGE",
+   "name": "Страж роя: инвариант I-2 как автомат (fleet_sweep.py + cron/dispatch)",
+   "source": [
+    {
+     "type": "artifact",
+     "uri": "evidence/fleet_verdict.csv",
+     "claim": "живой срез вердиктов стража по каждому живому телу"
+    }
+   ],
+   "version": "guard-2026-11-19",
+   "verified_by": [
+    "api_snapshot",
+    "run",
+    "lex_naturae"
+   ],
+   "scaffold": true,
+   "replaceable_by": [
+    "расширение флота новыми телами + повторный срез стража"
+   ],
+   "falsification_or_revision_condition": "Страж даёт FAIL вне реестра законных состояний или не исполняет self-тест автомата на раннере.",
+   "depends_on": {
+    "build": [
+     "witness-wave"
+    ],
+    "runtime": []
+   },
+   "status": "PASS",
+   "evidence": [
+    {
+     "check": "Прогон fleet_sweep.py на живом флоте",
+     "result": "тела=46, PASS=45, GATED-LEGAL=1 (markitdown), PENDING=0, FAIL=0; автомат 15/15 и 6/6 исполнен раннером",
+     "date": "2026-11-19",
+     "source_ref": "evidence/fleet_verdict.csv"
     }
    ]
   }

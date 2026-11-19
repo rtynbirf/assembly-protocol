@@ -9,3 +9,8 @@ fsm_illegal_total,6
 compendium_cases,12
 witness_dispatched,45
 witness_green,44
+guard_bodies,46
+guard_pass,45
+guard_gated_legal,1
+guard_pending,0
+guard_fail,0

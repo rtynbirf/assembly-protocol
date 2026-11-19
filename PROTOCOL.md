@@ -80,6 +80,12 @@ v7 реализует 6:
 - **CI** (`.github/workflows/protocol.yml`): на каждый пуш и PR исполняет 12 случаев
   и self-тест автомата. Переиспользуемый workflow: подключение к любому репозиторию —
   `uses: rtynbirf/assembly-protocol/.github/workflows/protocol.yml@main`.
+- **Страж роя** (`fleet_sweep.py` + `.github/workflows/fleet-sweep.yml`): инвариант I-2
+  как автомат. Обходит живые тела, исполняет self-тест автомата на раннере, проверяет
+  проводку и последний прогон каждого тела. Вердикты: PASS / GATED-LEGAL (ворота
+  платформы, тело в legit_open_states) / PENDING (транзиент по v7; stuck >60 мин —
+  тревога) / FAIL (провал вне легитимных состояний = красный CI). Ежедневный cron +
+  dispatch; срез — `fleet/FLEET_VERDICT.csv` (EMERGENT.md, п. 9).
 
 ## Роли и верификация
 

@@ -18,7 +18,7 @@
     "measurement_value": 46,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "530ac1791f3ec5d251b1e1d13f6787836140489c02fdeb48cbbbe6cb3b6c6dab",
+    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
     "csv_row": 3,
     "csv_column": "value"
    }
@@ -43,7 +43,7 @@
     "measurement_value": 45,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "530ac1791f3ec5d251b1e1d13f6787836140489c02fdeb48cbbbe6cb3b6c6dab",
+    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
     "csv_row": 4,
     "csv_column": "value"
    }
@@ -68,7 +68,7 @@
     "measurement_value": 15,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "530ac1791f3ec5d251b1e1d13f6787836140489c02fdeb48cbbbe6cb3b6c6dab",
+    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
     "csv_row": 5,
     "csv_column": "value"
    }
@@ -93,7 +93,7 @@
     "measurement_value": 12,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "530ac1791f3ec5d251b1e1d13f6787836140489c02fdeb48cbbbe6cb3b6c6dab",
+    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
     "csv_row": 9,
     "csv_column": "value"
    }
@@ -175,8 +175,33 @@
     "measurement_value": 44,
     "tolerance": 0.0,
     "raw_data_ref": "evidence/summary.csv",
-    "raw_data_sha256": "530ac1791f3ec5d251b1e1d13f6787836140489c02fdeb48cbbbe6cb3b6c6dab",
+    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
     "csv_row": 11,
+    "csv_column": "value"
+   }
+  ]
+ },
+ {
+  "claim_id": "AP-FLEET-002",
+  "statement": "Страж роя исполняет I-2 автоматически: 46 живых тел, PASS 45 + GATED-LEGAL 1 (markitdown, ворота консента форка), PENDING 0, FAIL 0; self-тест автомата исполнен раннером (15/15, 6/6).",
+  "kind": "observation",
+  "scope": "флот аккаунта rtynbirf",
+  "scope_id": "fleet.rtynbirf",
+  "status": "SUPPORTED",
+  "evidence": [
+   {
+    "description": "Вердикты стража по живому срезу API; числа из сводки",
+    "method": "measurement",
+    "result": "summary.csv строка 13, колонка value = 45",
+    "protocol": "Значение выведено fleet_sweep.py из живого API-среза; сверка ячейки CSV",
+    "instrument": "fleet_sweep.py (GitHub REST API + protocol_fsm.py)",
+    "unit": "count",
+    "quantity": "count",
+    "measurement_value": 45,
+    "tolerance": 0.0,
+    "raw_data_ref": "evidence/summary.csv",
+    "raw_data_sha256": "75fec1230946465ea66f000e583aec0e2415eb70a6edc99914a467f62661ac08",
+    "csv_row": 13,
     "csv_column": "value"
    }
   ]
