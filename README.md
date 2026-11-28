@@ -4,6 +4,14 @@
 
 </div>
 
+<!--ФОРЖ:МУЗА:НАЧАЛО-->
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/assembly-protocol@main/repo-muse.svg" width="100%" alt="Муза assembly-protocol: мастерская КУЗНЯ ПОЛИМАТ, кузня ПОЛИМАТ, раунд 12 · REVE=РЕВО" />
+  <br/>
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/assembly-protocol@main/forge-divider.svg" width="62%" alt="делитель мастерской КУЗНЯ ПОЛИМАТ" />
+</div>
+<!--ФОРЖ:МУЗА:КОНЕЦ-->
+
 <!--ФОРЖ:ПАСПОРТ:НАЧАЛО-->
 <div align="center">
   <img src="revo-page.svg" width="100%" alt="РЕВО-паспорт страницы assembly-protocol в каноне ORNAMENTAL MYTHO-REALISM: орнаментальная решётка, медальон-миф, строение файлов, лексикон — по фактическому контенту" />
@@ -11,8 +19,20 @@
 
 | ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
 |---:|---:|---:|---|---:|
-| 71 | 9 | 94 | 2026-11-28 | 0 |
+| 71 | 10 | 1 | 2026-11-28 | 0 |
 <!--ФОРЖ:ПАСПОРТ:КОНЕЦ-->
+
+# assembly-protocol
+
+<p align="center"><img src="https://cdn.jsdelivr.net/gh/rtynbirf/assembly-protocol@main/.github/social-preview.png" alt="assembly-protocol" width="100%"></p>
+
+<div align="center">
+
+<a href="https://github.com/rtynbirf/assembly-protocol"><img src="banner.png" width="100%" alt="assembly-protocol — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
+</div>
+
+
 
 # assembly-protocol
 
@@ -74,3 +94,5 @@ jobs:
   все 6 вердиктов достижимы (исполнено, не заявлено).
 - Второй исполнитель: место свободно. Запусти, сломай на своих средах, доложи.
 - Финалов нет: это текущая версия. «Пёс — сбоку».
+
+<!--ФОРЖ:ПОДВАЛ-->
