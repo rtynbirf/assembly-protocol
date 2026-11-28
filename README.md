@@ -19,8 +19,20 @@
 
 | ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
 |---:|---:|---:|---|---:|
-| 73 | 9 | 98 | 2026-11-28 | 0 |
+| 73 | 10 | 1 | 2026-11-28 | 0 |
 <!--ФОРЖ:ПАСПОРТ:КОНЕЦ-->
+
+# assembly-protocol
+
+<div align="center">
+
+<a href="https://github.com/rtynbirf/assembly-protocol"><img src="banner.png" width="100%" alt="assembly-protocol — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
+</div>
+
+
+
+
 
 # assembly-protocol
 
